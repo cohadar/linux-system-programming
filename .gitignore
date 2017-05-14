@@ -1,2 +1,5 @@
 *.exe
 njak.txt
+*.exe.dSYM/
+*.gcda
+*.gcno
