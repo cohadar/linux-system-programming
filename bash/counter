@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Function to display usage information
+usage() {
+  echo "Usage: $0 <name> <duration_seconds>"
+  echo "Example: $0 blue 10"
+}
+
+# Check if the correct number of arguments is provided
+if [ $# -ne 2 ]; then
+  usage
+  exit 1
+fi
+
+# Parse the duration from the argument
+name=$1
+duration=$2
+
+# Check if name is set
+if [[ -z "$name" ]]; then
+  echo "Error: Name must be set."
+  exit 1
+fi
+
+# Check if duration is a positive integer
+if ! [[ "$duration" =~ ^[1-9][0-9]*$ ]]; then
+  echo "Error: Duration must be a positive integer."
+  exit 1
+fi
+
+# Start counting
+echo "$name: Begin."
+for ((i=1; i<=$duration; i++)); do
+  echo "$name: $i"
+  sleep 1
+done
+echo "$name: End."
+
