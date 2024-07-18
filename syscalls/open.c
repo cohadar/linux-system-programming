@@ -9,7 +9,7 @@ static const char *S2 = "da joj prođe dan\n";
 
 int main() {
 	int n, fd;
-	fd = open("baba.txt", O_WRONLY|O_CREAT|O_TRUNC|O_APPEND, 0644);
+	fd = open("baba.txt", O_WRONLY|O_CREAT|O_TRUNC, 0644);
 	if (fd < 0) { perror("open"); return 1; }
 	n = write(fd, S1, strlen(S1));
 	if (n < 0) { perror("write(S1)"); return 1; }
