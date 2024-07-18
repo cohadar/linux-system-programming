@@ -3,3 +3,4 @@ njak.txt
 *.exe.dSYM/
 *.gcda
 *.gcno
+a.out
