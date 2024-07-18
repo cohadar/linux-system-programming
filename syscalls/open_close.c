@@ -15,5 +15,7 @@ int main() {
 	if (n < 0) { perror("write(S1)"); return 1; }
 	n = write(fd, S2, strlen(S2));
 	if (n < 0) { perror("write(S2)"); return 1; }
+	n = close(fd);
+	if (n < 0) { perror("close"); return 1; }
 	return 0;
 }
